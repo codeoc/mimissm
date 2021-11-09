@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--    settings:控制没有batis全局行为-->
+<!--    <settings>-->
+<!--        &lt;!&ndash;        设置没有batis输出日志&ndash;&gt;-->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+<!--    </settings>-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
+    <!--    设置别名-->
+<!--    <typeAliases>-->
+<!--        &lt;!&ndash;        name:实体类所在的包名&ndash;&gt;-->
+<!--        <package name="com.bjpowernode.domain"/>-->
+<!--    </typeAliases>-->
+    <!--    sql mapper（sql映射文件）的位置-->
+    <mappers>
+        <!--        name:是包名,这个包中所有mapper.xml一次都能加载
+                    使用package的要求：
+                    1.mapper文件名称和dao接口名必须完全相同，包括大小写
+                    2.mapper文件和dao 接口必须在同一目录
+        -->
+        <package name="com.bjpowernode.dao"/>
+    </mappers>
+</configuration>
